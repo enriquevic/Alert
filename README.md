@@ -3,15 +3,15 @@ O objetivo desta função é apresentar uma mensagem na tela do PowerShell, onde
 
 Esta função de alerta é composta por um título, uma mensagem e botões de ação.
 
-##Parâmetros:
+## Parâmetros:
 
-###1. PROMPT (Obrigatório):
+### 1. PROMPT (Obrigatório):
    Uma string que representa a mensagem exibida na caixa de diálogo. O prompt pode ser ilimitado de caracteres por padrão. No entanto, é possível limitar a quantidade de caracteres do prompt definindo o valor de charPrompt para um número maior que 0. Se o prompt consistir em mais de uma linha, automaticamente a linha será quebrada.
 
-###2. TITLE (Opcional):
+### 2. TITLE (Opcional):
    Uma string que representa o título exibido na barra de título da caixa de diálogo. Se omitido, o nome do aplicativo é colocado na barra de título. O desenvolvedor tem uma quantidade limitada de caracteres, dependendo do tipo de botão escolhido e se será utilizado o recurso de CONTEXT. Se o texto for maior que o espaço disponível, os últimos 3 caracteres serão retirados para adicionar reticências (...).
 
-###3. BUTTONS (Opcional):
+### 3. BUTTONS (Opcional):
    Um número que é a combinação de valores que especificam o número e o tipo de botões a serem exibidos, o estilo do ícone a ser usado, a identidade do botão padrão e a modalidade da caixa de mensagem. Se omitido, o valor padrão de buttons será 0. Os botões estão listados juntamente com o ícone que será apresentado ao lado do TITLE e o retorno esperado desta função por meio do botão pressionado. Veja os tipos de botões aceitos e como criar um botão próprio:
 
    0 - btOkOnly
@@ -90,8 +90,8 @@ Esta função de alerta é composta por um título, uma mensagem e botões de a�
            Ícone: ?
 Esse último tipo de botão é customizado pelo desenvolvedor. O primeiro atributo do objeto se refere ao ícone que será exibido ao lado do botão. O segundo atributo determina a presença do botão 'X' (fechar janela), sendo true para que o botão exista ou false para que ele não seja exibido. Em seguida, são listados os textos dos botões. O sistema selecionará automaticamente o primeiro caractere de cada texto para determinar a seleção do botão. No caso de dois botões começarem com a mesma letra, será escolhido o segundo ou o terceiro, e assim por diante. Se dois atributos forem iguais, um deles será desconsiderado.
 
-###4. HELPFILE:
+### 4. HELPFILE:
 Se um texto de ajuda for especificado no HelpFile, a barra de título receberá o botão de interrogação [?]. Quando o usuário pressionar '?', será exibida uma tela explicando melhor o motivo daquele alerta. Ao pressionar 'O' do [O]k ou o 'X' do botão [X], ele voltará ao alerta.
 
-###5. CONTEXT:
+### 5. CONTEXT:
 Opcional. É uma expressão numérica que representa o número de contexto da Ajuda atribuído ao tópico da Ajuda correspondente pelo autor. Se o contexto for fornecido, o helpfile também deve ser fornecido.
